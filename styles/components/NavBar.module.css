@@ -1,0 +1,13 @@
+.nav_wrapper {
+  background-color: antiquewhite;
+  color: #000;
+}
+
+.active {
+  color: tomato;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+/* 자식 중첩한 CSS 적용이 가능할까 */
