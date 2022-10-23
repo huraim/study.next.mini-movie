@@ -24,12 +24,15 @@ export default function Index({ results }) {
         </div>
       ))}
 
-      <style jsx>{`
+      <style jsx>{/*css*/`
         .container {
           display: grid;
           grid-template-columns: 1fr 1fr;
           padding: 20px;
           gap: 20px;
+        }
+        .movie {
+          cursor: pointer;
         }
         .movie img {
           max-width: 100%;
