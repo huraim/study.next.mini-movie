@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+const API_KEY = process.env.API_KEY; //env 파일을 만들고 분리 가능
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -21,6 +24,14 @@ const nextConfig = {
         destination: "/new-string/:path*",
         permanent: false,
       }
+    ]
+  },
+  async rewrites() { //개발자 툴 NETWORK API 출처 숨김 및 JSON URL 처리 가능
+    return [
+      {
+        source: '/api/movies',
+        destination: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
+      },
     ]
   }
 }
