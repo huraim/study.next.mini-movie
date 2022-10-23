@@ -7,15 +7,7 @@ export default function Index({ results }) {
   const router = useRouter();
   console.log(results);
   const movieClick = (id, title) => {
-    router.push(
-      {
-        pathname: `/movies/${id}`,
-        query: {
-          title //title: title이랑 같음
-        }
-      },
-      `/movies/${id}` //해당 페이지들 query 정보를 넘기지만 URL 상으로 가려준다 (마스킹).
-    );
+    router.push(`/movies/${title}/${id}`);
   }
   // const [movies, setMovies] = useState(); //CSR 방식
   // useEffect(() => {
@@ -35,15 +27,7 @@ export default function Index({ results }) {
       {results?.map(movie => (
         <div onClick={() => movieClick(movie.id, movie.title)} className="movie" key={movie.id}>
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
-          <Link href={
-            {
-              pathname: `/movies/${movie.id}`,
-              query: {
-                title: movie.title
-              }
-            }}
-            as={`/movies/${movie.id}`} //마스킹
-          >
+          <Link href={`/movies/${movie.title}/${movie.id}`}>
             <h4>{movie.original_title}</h4>
           </Link>
         </div>
