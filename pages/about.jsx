@@ -8,3 +8,12 @@ export default function About() {
     </>
   )
 }
+
+export function getServerSideProps() {
+  const test = 'test';
+  return {
+    props: {
+      test,
+    },
+  }
+}
