@@ -1,4 +1,4 @@
-import Seo from "../components/Seo";
+import Seo from "../components/seo.jsx";
 
 export default function About() {
   return (
