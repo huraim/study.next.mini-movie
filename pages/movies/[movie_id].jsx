@@ -4,6 +4,8 @@ export default function Detail() {
   const router = useRouter();
   console.log(router);
   return (
-    <div>detail {router.query.movie_id}</div>
+    <>
+      <h4>{router.query.title || "Loading..."}</h4>
+    </>
   )
 }
